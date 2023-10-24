@@ -1,0 +1,16 @@
+.app {
+    max-width: 600px;
+    margin: 0 auto 300px;
+    padding: 20px 30px;
+    background-color: #efefef;
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 670px) {
+    
+    html {
+        font-size: 87.5%;
+    }
+    
+}
