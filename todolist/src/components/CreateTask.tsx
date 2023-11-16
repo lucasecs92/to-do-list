@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./CreateTask.module.css";
+import styles from "../assets/css/CreateTask.module.css";
 
 interface AddProps {
     (text: string, category: string): void;

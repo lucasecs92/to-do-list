@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { CreateTask } from './componentes/CreateTask';
-import { Search } from './componentes/Search';
-import { Filter } from './componentes/Filter';
-import { TodoList } from './componentes/TodoList';
 
-import styles from './App.module.css'
-import './global.css'; 
+import { CreateTask } from './components/CreateTask';
+import { Search } from './components/Search';
+import { Filter } from './components/Filter';
+import { TodoList } from './components/TodoList';
+
+import styles from './assets/css/App.module.css';
+import './assets/css/global.css'; 
 
 export interface TodoType {
    id: number;
@@ -14,12 +15,10 @@ export interface TodoType {
    isCompleted: boolean;
 }
 
-// const dataLocalStorage = JSON.parse(localStorage.getItem('TAREFAS'));
 const item = localStorage.getItem('TAREFAS');
 const dataLocalStorage = JSON.parse(item !== null ? item : '{}');
 
 function App() {
-
   const [todos, setTodos] = useState(dataLocalStorage);
 
 // Funcionalidade de pesquisa
@@ -75,7 +74,7 @@ function App() {
   }, [todos] );
 
   return ( 
-    <section className={styles.app}>
+    <section className={styles.ContainerApp}>
         <h1>Lista de Tarefas</h1>     
         <Search search={search} setSearch={setSearch} />
         <Filter filter={filter} setFilter={setFilter} setSort={setSort} />

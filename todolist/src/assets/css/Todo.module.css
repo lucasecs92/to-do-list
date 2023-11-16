@@ -13,7 +13,7 @@
 .todoBtn button {
     color: var(--white);
     padding: 5px 5px;
-    margin-right: 10px;
+    margin-left: 10px;
     border: none;
     border-radius: 3px;
 
@@ -45,6 +45,10 @@
     
     .todo {
         flex-direction: column;
-        align-items: stretch;
+        align-items: stretch;   
     }
+
+    .todoBtn button {
+        margin: 0px 10px 0px 0px;
+    }   
 }

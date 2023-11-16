@@ -1,6 +1,6 @@
 import { TodoType } from "../App";
 import { Todo } from "./Todo";
-import styles from "./TodoList.module.css"
+import styles from "../assets/css/TodoList.module.css";
 
 
 interface TodoListProps {

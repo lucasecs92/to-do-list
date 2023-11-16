@@ -1,4 +1,4 @@
-import styles from './Search.module.css';
+import styles from '../assets/css/Search.module.css';
 
 export interface SearchProps {
     search: string;

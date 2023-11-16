@@ -2,7 +2,7 @@ import { CheckSquare, FloppyDisk, NotePencil, TrashSimple } from '@phosphor-icon
 import { TodoType } from '../App' 
 import { useState } from 'react';
 
-import styles from './Todo.module.css';
+import styles from '../assets/css/Todo.module.css';
 
 interface TodoProps {
     todo: TodoType;
@@ -44,7 +44,7 @@ export function Todo({
                         type="text"
                         value={newText}
                         onChange={(e) => setNewText(e.target.value)}
-                        onKeyPress={(e) => {
+                        onKeyDown={(e) => {
                             if (e.key === "Enter") {
                                 handleEdit();
                             }
