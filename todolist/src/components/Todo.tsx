@@ -53,7 +53,6 @@ export function Todo({
                 ) : (
                     <p onDoubleClick={() => setIsEditing(true)}>{todo.text}</p>
                 )}
-                {/* <p>{todo.text}</p> */}
                 <p className='category'>({todo.category})</p>
             </section>
 

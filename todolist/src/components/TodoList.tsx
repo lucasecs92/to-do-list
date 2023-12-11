@@ -2,7 +2,6 @@ import { TodoType } from "../App";
 import { Todo } from "./Todo";
 import styles from "../assets/css/TodoList.module.css";
 
-
 interface TodoListProps {
     todos: TodoType[];
     filter: string;
