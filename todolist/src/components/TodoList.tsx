@@ -22,6 +22,15 @@ interface TodoListProps {
     editTodo
   }: TodoListProps) {
 
+    console.log('Todos:', todos);
+    console.log('Filtered todos:', todos.filter((todo:TodoType) => 
+    filter === "All" 
+      ? true 
+      : filter === "Completed" 
+      ? todo.isCompleted 
+      : !todo.isCompleted
+    ));
+
     return (
       <section className={styles.todoList}>
         {todos

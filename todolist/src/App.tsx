@@ -16,7 +16,7 @@ export interface TodoType {
 }
 
 const item = localStorage.getItem('TAREFAS');
-const dataLocalStorage = JSON.parse(item !== null ? item : '{}');
+const dataLocalStorage = JSON.parse(item !== null ? item : '[]');
 
 function App() {
   const [todos, setTodos] = useState(dataLocalStorage);
@@ -73,10 +73,16 @@ function App() {
       localStorage.setItem('TAREFAS', JSON.stringify(todos));
   }, [todos] );
 
+  console.log(todos);
+  console.log(filter);
+  console.log(search);
+  console.log(sort);
+
   return ( 
     <section className={styles.ContainerApp}>
         <h1>Lista de Tarefas</h1>     
         <Search search={search} setSearch={setSearch} />
+        <CreateTask addTodo={addTodo} /> 
         <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
         <TodoList 
           todos={todos} 
@@ -87,7 +93,6 @@ function App() {
           completeTodo={completeTodo} 
           editTodo={editTodo}      
         />
-        <CreateTask addTodo={addTodo} /> 
     </section>
   )
 }

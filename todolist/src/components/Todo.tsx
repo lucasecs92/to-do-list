@@ -34,36 +34,37 @@ export function Todo({
     };
     
     return (
-        <section 
-            className={styles.todo} 
-            style={{textDecoration: todo.isCompleted ? "line-through" : "" }}
-        >
-            <section className='content'>
-                {isEditing ? (
-                    <input
-                        type="text"
-                        value={newText}
-                        onChange={(e) => setNewText(e.target.value)}
-                        onKeyDown={(e) => {
-                            if (e.key === "Enter") {
-                                handleEdit();
-                            }
-                        }}
-                    />
-                ) : (
-                    <p onDoubleClick={() => setIsEditing(true)}>{todo.text}</p>
-                )}
-                <p className='category'>({todo.category})</p>
+        <>
+            <section
+                className={styles.containerTodo}
+                style={{textDecoration: todo.isCompleted ? "line-through" : "" }}
+            >
+                <section className='content'>
+                    {isEditing ? (
+                        <input
+                            type="text"
+                            value={newText}
+                            onChange={(e) => setNewText(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                    handleEdit();
+                                }
+                            }}
+                        />
+                    ) : (
+                        <p onDoubleClick={() => setIsEditing(true)}>{todo.text}</p>
+                    )}
+                    <p className='category'>({todo.category})</p>
+                </section>
+                <section className={styles.todoBtn}>
+                    <button className={styles.complete} onClick={() => onCompleteTodo(todo.id)}><CheckSquare weight='bold'/></button>
+                    <button className={styles.edit} onClick={handleEdit}>
+                        {isEditing && isSaving ? <FloppyDisk weight="bold"/> : <NotePencil weight="bold"/>}
+                    </button>
+                    <button className={styles.remove} onClick={() => onRemoveTodo(todo.id)}><TrashSimple weight='bold'/></button>
+                </section>
             </section>
-
-            <section className={styles.todoBtn}>
-                <button className={styles.complete} onClick={() => onCompleteTodo(todo.id)}><CheckSquare weight='bold'/></button>
-                <button className={styles.edit} onClick={handleEdit}>
-                    {isEditing && isSaving ? <FloppyDisk weight="bold"/> : <NotePencil weight="bold"/>}
-                </button>
-                <button className={styles.remove} onClick={() => onRemoveTodo(todo.id)}><TrashSimple weight='bold'/></button>
-            </section>
-        </section>
+        </>
     )
 }   
 

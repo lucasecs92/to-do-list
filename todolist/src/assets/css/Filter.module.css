@@ -1,7 +1,11 @@
-.filter  {
+/* .filter  {
     border-bottom: 1px solid #555;
     margin-bottom: 20px;
     padding-bottom: 20px;
+} */
+
+.filter h2 {
+    font-size: 1.3rem;
 }
 
 .filterOptions {
