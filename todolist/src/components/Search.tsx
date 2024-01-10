@@ -7,15 +7,15 @@ export interface SearchProps {
 
 export function Search({ search, setSearch }:SearchProps) {
     return (
-        <section className={styles.search}>
+        <search className={styles.search}>
             <h2>Pesquisar:</h2>
             <input 
-                type="text"
+                type="search"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Digite para pesquisar..." 
             />
-        </section>
+        </search>
     )
 }
 
